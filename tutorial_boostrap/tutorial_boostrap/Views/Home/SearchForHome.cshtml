@@ -1,0 +1,112 @@
+﻿@model IEnumerable<tutorial_boostrap.Models.subvision>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h4>
+    @Html.ActionLink("SearchForAdmin(b)", "SearchForHome", "Home")
+</h4>
+<h2>Admin Index</h2>
+
+
+<table class="table table-condensed">
+    <tr>
+        <td>
+            <h4>
+                @Html.ActionLink("Create New subvision", "Create")
+            </h4>
+        </td>
+
+        <td>
+            <h4>
+                @Html.ActionLink("Create New Deparment", "CreateDepartment")
+            </h4>
+        </td>
+    </tr>
+</table>
+<table class="table table-condensed">
+    <tr>
+        <td>
+            <h4>
+                @Html.ActionLink("Delete From subvision", "Indexsubvision")
+            </h4>
+        </td>
+
+        <td>
+            <h4>
+                @Html.ActionLink("Delete From Deparment", "Indexdepartment")
+            </h4>
+        </td>
+    </tr>
+</table>
+
+
+<table class="table table-hover">
+    <tr class="success">
+        <td>
+            @*@Html.DisplayNameFor(model => model.department_name)*@
+            @Html.ActionLink("Department name", "SearchForHome", new { sortBy = ViewBag.DeparName})
+        </td>
+        <td>
+            @*@Html.DisplayNameFor(model => model.department.cheif_department)*@
+            @Html.ActionLink("Department chef", "SearchForHome", new { sortBy = ViewBag.DeparChef })
+        </td>
+        <td>
+            @*@html.displaynamefor(model => model.department.phone_department)*@
+            @Html.ActionLink("Department phone", "SearchForHome", new { sortBy = ViewBag.DeparPhone })
+        </td>
+        <td>
+            @*@Html.DisplayNameFor(model => model.department.note_department)*@
+            @Html.ActionLink("Department note", "SearchForHome", new { sortBy = ViewBag.DeparNote })
+        </td>
+        <td>
+            @*@Html.DisplayNameFor(model => model.subvision_name)*@
+            @Html.ActionLink("Subvision name", "SearchForHome", new { sortBy = ViewBag.SubName })
+        </td>
+
+        <td>
+            @*@Html.DisplayNameFor(model => model.cheif_subvision)*@
+            @Html.ActionLink("Subvision chef", "SearchForHome", new { sortBy = ViewBag.SubChef })
+        </td>
+        <td>
+            @*@Html.DisplayNameFor(model => model.phone_subvision)*@
+            @Html.ActionLink("Subvision phone", "SearchForHome", new { sortBy = ViewBag.SubPhone })
+        </td>
+        <td>
+            @*@Html.DisplayNameFor(model => model.note_subvision)*@
+            @Html.ActionLink("Subvision note","SearchForHome", new {sortBy = ViewBag.SubNote})
+               </td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.department_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.department.cheif_department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.department.phone_department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.department.note_department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.subvision_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cheif_subvision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone_subvision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.note_subvision)
+            </td>
+        </tr>
+    }
+
+</table>

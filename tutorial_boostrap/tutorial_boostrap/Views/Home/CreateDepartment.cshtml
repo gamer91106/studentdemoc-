@@ -1,0 +1,60 @@
+﻿@model tutorial_boostrap.Models.department
+
+@{
+    ViewBag.Title = "CreateDepartment";
+}
+
+<h2>CreateDepartment</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>department</legend>
+
+       
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.department_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.department_name)
+            @Html.ValidationMessageFor(model => model.department_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cheif_department)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cheif_department)
+            @Html.ValidationMessageFor(model => model.cheif_department)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.phone_department)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.phone_department)
+            @Html.ValidationMessageFor(model => model.phone_department)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.note_department)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.note_department)
+            @Html.ValidationMessageFor(model => model.note_department)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
